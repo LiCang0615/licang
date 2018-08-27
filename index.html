@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>缘分对对碰</title>
+	<style type="text/css">
+		body{
+			background-color: rgb(228,255,255);
+		}
+		h1{
+			text-align: center;
+		}
+		h2{
+			text-align: center;
+			color: rgb(20,180,30);
+		}
+		fieldset{
+			width: 600px;
+			text-align: center;
+			margin: auto;
+		}
+		label{
+			float: left;
+			text-align: right;
+			padding-right: 1em;
+			clear: left;
+			width: 300px;
+		}
+		input{
+			float: left;
+		}
+		button{
+			display: block;
+			clear: both;
+			margin: auto;
+		}
+		#output{
+			text-align: center;
+			font-size: 36px;
+			color: rgb(120,30,250);
+		}
+	</style>
+		<link rel="stylesheet"
+		  type="text/css"
+		  href="wordStory.css"/>
+	<script type="text/javascript"
+			src="wordStory.js">
+	</script>
+</head>
+<body>
+<h1>缘分对对碰</h1>
+<h2>输入你和ta的名字，测出你们的缘分指数！</h2>
+<p>
+<form>
+	<fieldset>
+		<label for="boyName">男方姓名</label>
+		<input type="text" id="boyName"/>
+		<label for="girlName">女方姓名</label>
+		<input type="text" id="girlName"/>
+		<button type="button"
+				onclick="tellStory()">
+			测一测
+		</button>
+	</fieldset>
+</form>
+<div id="output">
+
+</div>
+</p>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script>
+			function tellStory() {
+			var textBoyName=document.getElementById("boyName");
+			var boyName=textBoyName.value;
+			var textGirlName=document.getElementById("girlName");
+			var girlName=textGirlName.value;
+			var output=document.getElementById("output");
+			var point=Math.ceil(10*(Math.random()+9));
+			story=boyName+" 和 "+girlName+" 此时此刻的缘分指数为 "+point;
+			output.innerHTML=story;
+		}
+</script>
+</body>
+</html>
